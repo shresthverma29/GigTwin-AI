@@ -646,52 +646,6 @@ GigTwin-AI/
 
 ---
 
-## 🤝 Contributing
-
-We welcome contributions! Please:
-
-1. **Fork the repository**
-   ```bash
-   git clone https://github.com/shresthverma29/GigTwin-AI.git
-   ```
-
-2. **Create a feature branch**
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-
-3. **Commit changes**
-   ```bash
-   git commit -m "Add: detailed description of your changes"
-   ```
-
-4. **Push to branch**
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-
-5. **Open Pull Request**
-   - Describe changes clearly
-   - Include screenshots/demos if applicable
-   - Reference any related issues
-
-### Contribution Areas
-- ✅ Backend API development
-- ✅ Frontend UI enhancements
-- ✅ AI/ML model improvements
-- ✅ Guidewire integration
-- ✅ Documentation
-- ✅ Bug fixes
-- ✅ Performance optimization
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License — see LICENSE file for details.
-
----
-
 ## 📞 Contact & Support
 
 - **Event:** Guidewire Hackathon 2025
@@ -702,7 +656,7 @@ This project is licensed under the MIT License — see LICENSE file for details.
 ### Feedback & Issues
 - **Report Issues:** [GitHub Issues](https://github.com/shresthverma29/GigTwin-AI/issues)
 - **Feature Requests:** [GitHub Discussions](https://github.com/shresthverma29/GigTwin-AI/discussions)
-- **Contact:** shresth.verma@gigtwin.ai
+- **Contact:** shresthverma452@gmail.com/jv8132@srmist.edu.in
 
 ---
 
@@ -747,5 +701,5 @@ GigShield AI enables:
 ---
 
 *Last updated: March 20, 2026*  
-*Built with ❤️ for the Guidewire Hackathon 2025*  
+*Built with ❤️ by Team BeyondTheBench*  
 *Demo status: ✅ Live and interactive*
