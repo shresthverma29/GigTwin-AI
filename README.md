@@ -543,4 +543,4 @@ Income protection for India's 12 million gig workers — instant, fair, and frau
 ---
 
 *Last updated: March 19, 2026*  
-*Built with ❤️ by the TEAM DIAMONDS*
+*Built with ❤️ by the BeyondTheBench*
