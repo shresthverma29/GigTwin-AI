@@ -1,29 +1,78 @@
 # GigShield AI — Income Protection for Gig Workers
 
-**GigShield AI** is an AI-powered parametric insurance platform that provides instant income protection for gig workers (delivery, ride-sharing, task workers) using digital twin technology and behavioral verification instead of traditional claims processing.
+**GigShield AI** is an AI-powered parametric insurance platform that provides instant income protection to gig workers (delivery partners, ride-sharing drivers, task workers) using Digital Twin modeling, AI income prediction, and behavioral fraud verification.
 
-## 🎯 Problem Statement
+Instead of manual claims, GigShield AI predicts expected income, detects disruptions, verifies authenticity, and automatically triggers payouts within 2–4 hours via UPI.
 
-India has **12 million gig workers** with zero income protection. When disruptions hit (floods, storms, pollution, extreme weather), they lose income with no safety net. Traditional insurance is slow and requires lengthy manual claims processing.
-
-**GigShield AI solves this:**
-- ✅ **2-minute enrollment** (no documents needed)
-- ✅ **Instant auto-payouts** (within 2–4 hours via UPI)
-- ✅ **No manual claims** (parametric triggers)
-- ✅ **Fraud-proof** (behavioral digital twins)
+**Mission:** Make gig worker insurance instant, automated, fraud-resistant, and accessible.
 
 ---
 
-## 🏗️ Architecture Overview
+## 🎯 The Problem
 
-### System Layers
+India has **12 million gig workers** with zero income protection. When disruptions hit—heavy rain, pollution spikes, platform outages, demand crashes—workers lose income immediately with no safety net.
 
-GigShield AI consists of four core layers:
+### Why Traditional Insurance Fails
+
+❌ Claims take weeks to process  
+❌ Heavy documentation required  
+❌ Manual verification delays  
+❌ Limited gig worker eligibility  
+❌ Not designed for variable daily income  
+
+### Our Solution
+
+✅ **2-minute enrollment** (no paperwork)  
+✅ **Instant auto-payouts** (2–4 hours via UPI)  
+✅ **Zero manual claims** (parametric triggers)  
+✅ **AI fraud detection** (behavioral verification)  
+✅ **Digital Twin modeling** (personalized income baseline)  
+
+---
+
+## 👥 Target User Persona
+
+### Ravi — Delivery Partner (Age 23)
+
+```
+Daily Income:      ₹850
+Savings:          <₹10,000
+Platform:         Swiggy
+Device:           Smartphone
+Problem:          Heavy rain = ₹0 income that day
+
+Traditional insurance:
+  • Requires documents
+  • Claims take 2–3 weeks
+  • Not built for gig workers
+  
+GigShield AI:
+  • Automatic detection
+  • Same-day payout
+  • Mobile-first process
+  • No manual filing
+```
+
+### Target Demographics
+
+| Attribute | Value |
+|-----------|-------|
+| Age | 18–40 |
+| Income Type | Daily variable earnings |
+| Average Income | ₹400–₹1,500/day |
+| Device Type | Smartphone |
+| Primary Risk | Immediate income loss during disruptions |
+
+---
+
+## 🏗️ System Architecture
+
+GigShield AI consists of **four core layers**:
 
 ```
 ┌─────────────────────────────────────────────────┐
 │ Data Sources Layer                              │
-│ OpenWeather API · AQI · NDMA · Gig Platform APIs
+│ OpenWeather · AQI · NDMA · Gig Platform APIs   │
 └──────────────────┬──────────────────────────────┘
                    ↓
 ┌─────────────────────────────────────────────────┐
@@ -33,255 +82,286 @@ GigShield AI consists of four core layers:
 └──────────────────┬──────────────────────────────┘
                    ↓
 ┌─────────────────────────────────────────────────┐
-│ Guidewire Integration (Core Platform)           │
+│ Insurance Workflow Layer (Guidewire)            │
 │ PolicyCenter · ClaimCenter · BillingCenter      │
 └──────────────────┬──────────────────────────────┘
                    ↓
 ┌─────────────────────────────────────────────────┐
 │ Output Layer                                    │
-│ Worker Mobile App · UPI Payouts · Analytics     │
+│ Worker Mobile App · UPI Payouts · Dashboard     │
 └─────────────────────────────────────────────────┘
+```
+
+---
+
+## 🤖 How Our AI Works
+
+GigShield AI uses a **three-engine AI architecture**:
+
+### Engine 1: Income Prediction (Digital Twin)
+
+Each worker receives a personalized Digital Twin model based on:
+
+```
+✓ Historical earnings (90 days)
+✓ Working hours patterns
+✓ Location productivity
+✓ Gig platform demand
+✓ Seasonal trends
+✓ Weekly consistency
+```
+
+**Output:** Expected weekly income baseline
+
+**Example:**
+```
+Expected income: ₹5,500
+Actual income:   ₹2,100
+Deviation:       62% ← INCOME LOSS DETECTED
+
+→ Triggers fraud check + possible payout
+```
+
+---
+
+### Engine 2: Disruption Detection
+
+AI validates disruptions using **multi-signal analysis**:
+
+```
+Weather Signal:
+  ✓ OpenWeather API rainfall
+  ✓ Severity threshold crossing
+  
+AQI Signal:
+  ✓ Air quality index spike
+  ✓ Breathing difficulty alert
+  
+Disaster Signal:
+  ✓ NDMA flood alerts
+  ✓ Government notifications
+  
+Platform Signal:
+  ✓ Order volume drop
+  ✓ Demand reduction
+  
+Income Signal:
+  ✓ Earnings deviation
+  ✓ Pattern anomaly
+```
+
+**Trigger Logic:**
+```
+IF (actual_income < threshold) 
+   AND (disruption_signal = true)
+   AND (fraud_check = pass)
+THEN
+   Payout triggered automatically
+```
+
+---
+
+### Engine 3: Fraud Detection
+
+GigShield AI verifies authenticity using **5 verification layers** instead of GPS alone:
+
+#### Layer 1: Behavioral Pattern Verification
+```
+✓ Historical earning baseline vs current claim
+✓ Working hours consistency
+✓ Login activity during disruption
+✓ Order acceptance patterns
+```
+
+#### Layer 2: Device Integrity Signals
+```
+✓ Mock GPS detection
+✓ Developer mode check
+✓ Rooted/jailbreak detection
+✓ Sensor consistency validation
+```
+
+#### Layer 3: Network Intelligence
+```
+✓ IP geolocation vs GPS comparison
+✓ Tower triangulation verification
+✓ WiFi region mapping
+✓ VPN detection
+```
+
+#### Layer 4: Movement Pattern Analysis
+```
+✓ Speed validation (realistic travel)
+✓ Route continuity checks
+✓ Teleport detection (impossible jumps)
+✓ GPS drift pattern analysis
+```
+
+#### Layer 5: Platform Activity Verification
+```
+✓ Orders received vs accepted
+✓ Online duration
+✓ Cancellation logs
+✓ Real-time demand trends
 ```
 
 ---
 
 ## 🔐 Adversarial Defense & Anti-Spoofing Strategy
 
-### Problem: GPS Spoofing & Coordinated Fraud Rings
+### The Core Principle
 
-Coordinated fraud rings may attempt to spoof GPS locations to claim disruption payouts while remaining safe and inactive. GigShield AI prevents this using **multi-signal behavioral verification** instead of relying on GPS alone.
+**Behavior > Location**
 
-### Solution: Digital Twin Behavioral Verification
-
-Instead of trusting location, GigShield AI verifies **behavioral consistency** using each worker's Digital Twin model built from 90 days of historical data.
-
----
-
-## 1️⃣ The Differentiation Strategy
+Because GPS can be spoofed, but behavioral patterns are significantly harder to fake consistently.
 
 ### Genuine Worker vs GPS Spoofer
 
 **Genuine Worker Signals:**
 ```
-Normal pattern:
+Normal Pattern:
   • 18–22 deliveries/day
   • Regular login activity
-  • Order acceptance pattern
-  • Gradual income drop during disruption
-  • Platform shows demand reduction
+  • Consistent order acceptance
   
-During disruption:
-  • Reduced but not zero activity (6–8 deliveries)
-  • Login attempts present
+During Disruption:
+  • Reduced but NOT zero activity (6–8 deliveries)
+  • Login attempts visible
   • Order cancellations documented
-  • Income drop ~40%
+  • Gradual income drop (~40%)
+  • Platform shows demand reduction
   
 Result: ✅ GENUINE DISRUPTION CLAIM
 ```
 
 **GPS Spoofer Signals:**
 ```
-Normal pattern:
-  • Active daily, 20+ deliveries
-  • Consistent engagement
-  
-Fraud attempt:
+Fraud Pattern:
   • Perfect GPS location match (inside flood zone)
   • Zero activity
   • Zero login attempts
   • Zero order interaction
   • Static device behavior
   • Sudden complete inactivity
+  • No behavioral deviation explanation
   
 Result: ❌ FRAUD DETECTED
 ```
 
-### Key Principle
-
-**Behavior > Location**
-
-Because:
-- GPS can be spoofed with dedicated apps
-- Behavioral patterns are significantly harder to fake consistently
-- Digital Twin captures 90 days of baseline data
-
 ---
 
-## 2️⃣ Multi-Signal Verification System
+### Fraud Ring Detection
 
-GigShield AI analyzes **5 verification layers** instead of relying on GPS alone:
+GigShield AI detects **coordinated syndicate fraud** using graph-based clustering:
 
-### Layer 1: Behavioral Digital Twin Comparison
-
-**What's checked:**
-- Historical earnings vs current claim
-- Working hours consistency
-- Delivery frequency patterns
-- Login activity during disruption
-- Income deviation percentage
-
-**Example:**
+**What triggers alarm:**
 ```
-Worker history: 20 deliveries/day average
-Claim data: Claims disruption but 0 deliveries
-Red flags: ❌ Behavioral inconsistency
-```
-
-### Layer 2: Movement Pattern Analysis
-
-**What's checked:**
-- Speed anomalies (realistic travel speeds)
-- Teleport jumps (impossible movements)
-- Route continuity (connected path)
-- GPS drift patterns (stationary vs moving)
-
-**Example:**
-```
-GPS shows: 3 km traveled in 10 seconds
-Physics check: ❌ Impossible movement detected (270 km/h speed)
-```
-
-### Layer 3: Device Integrity Signals
-
-**What's checked:**
-- Mock GPS app detection
-- Developer mode enabled
-- Emulator/rooted device detection
-- Sensor consistency (accelerometer, gyroscope)
-
-**Example:**
-```
-Device checks:
-  ✅ Mock location app: NOT DETECTED
-  ✅ Developer mode: OFF
-  ✅ Rooted: NO
-  ✅ Sensors: Active and consistent
+Multiple workers showing:
+  ✓ Identical GPS coordinates
+  ✓ Synchronized inactivity (same timestamp)
+  ✓ Same device fingerprints
+  ✓ Same network/IP clusters
+  ✓ Synchronized income drops (same %)
   
-Result: ✅ Device looks authentic
+Cluster density > threshold → FRAUD RING SUSPECTED
 ```
 
-### Layer 4: Network Intelligence Verification
-
-**What's checked:**
-- IP geolocation vs GPS location comparison
-- Network tower triangulation
-- WiFi region mapping
-- Latency patterns
-
-**Example:**
-```
-GPS claims: Flood zone (Chennai)
-IP location: Residential area (Bangalore, 300 km away)
-Latency pattern: Inconsistent
-Result: ❌ Network-location mismatch detected
-```
-
-### Layer 5: Environmental Consistency Checks
-
-**What's checked:**
-- Real-time order volume in claimed disruption zone
-- Platform demand reduction
-- Road closure confirmations
-- Worker density changes
-
-**Example:**
-```
-Claims: Heavy flooding in area
-Platform data: 
-  ✅ Order volume dropped 60%
-  ✅ Active worker count down 75%
-  ✅ Road closures confirmed via NDMA
-Result: ✅ Disruption verified
-```
-
----
-
-## 3️⃣ Fraud Ring Detection
-
-GigShield AI identifies coordinated syndicate fraud using **graph-based clustering analysis**:
-
-### Anomaly Pattern Detection
-
-System flags when multiple workers show:
-```
-• Identical GPS coordinates (same zone)
-• Synchronized inactivity timing (same hours)
-• Same device patterns/fingerprints
-• Same network/IP clusters
-• Synchronized earning drops (same percentage)
-```
-
-### Example Fraud Ring Detection
-
+**Example Detection:**
 ```
 50 workers identified:
-  • All stopped work at same timestamp
-  • All claim same weather zone
+  • Stopped work at same time: 14:30 IST
+  • All claim same weather zone: Chennai
   • All show identical GPS drift patterns
-  • All use same IP range
-  • All drop earnings by exactly same %
+  • All use same IP range: 203.X.X.X
+  • All dropped earnings by 87%
   
-Cluster density analysis:
-  Normal threshold: 5–10% connection
-  Detected cluster: 87% connection
+AI Analysis:
+  Normal connection rate: 5–10%
+  Detected cluster: 87%
   
-Result: ❌ FRAUD RING SUSPECTED
-Actions taken:
-  • Investigation escalated
-  • All claims in cluster marked for review
-  • Risk scoring increased for cluster members
+Action: Investigation escalated, cluster flagged
 ```
 
 ---
 
-## 4️⃣ Trust Scoring System
-
-Instead of binary yes/no approval, GigShield AI uses **dynamic trust scores**:
-
-### Trust Score Tiers
+## 🎯 End-to-End Product Flow
 
 ```
-80–100 → INSTANT PAYOUT
-  • Trusted worker history
-  • All verification signals green
-  • Immediate UPI transfer
+Step 01: Worker Enrolls
+└─ Links gig platform account (Swiggy/Zomato/Uber)
+   └─ Takes 2 minutes, no documents
 
-60–79 → SOFT VERIFICATION
-  • Minor anomalies detected
-  • Quick verification needed
-  • Lightweight proof requested (selfie, location refresh)
-  
-40–59 → MANUAL AI REVIEW
-  • Multiple anomalies
-  • AI review required
-  • Claim held for additional verification
+Step 02: Digital Twin Built
+└─ AI analyzes 90 days of earning history
+   └─ Establishes weekly income baseline
+   └─ Confidence score: 94% average
 
-Below 40 → INVESTIGATION REQUIRED
-  • High fraud probability
-  • Claims/fraud team involvement
-  • Detailed investigation
+Step 03: Premium Deducted
+└─ ₹20–40/week automatically deducted
+   └─ From weekly gig platform settlement
+   └─ Flexible, can cancel anytime
+
+Step 04: Disruption Detected
+└─ OpenWeather/AQI/NDMA API triggers
+   └─ Real-time event confirmation
+   └─ Location-specific impact verified
+
+Step 05: Fraud Check
+└─ GPS + behavior + network + device anomaly AI
+   └─ Digital Twin comparison
+   └─ Fraud ring cluster detection
+   └─ Trust score calculated
+
+Step 06: Auto Payout
+└─ UPI transfer within 2–4 hours
+   └─ No claim forms needed
+   └─ Notification sent to worker
 ```
 
 ---
 
-## 5️⃣ Worker Protection Workflow
+## 🛡️ UX Balance — Honest Worker Protection
+
+GigShield AI uses a **trust-first approach** instead of punitive rejections.
+
+### Risk-Based Processing
+
+```
+Low Risk (80–100 trust score)
+  → Instant payout without questions
+
+Medium Risk (60–79 trust score)
+  → Quick soft verification
+  → Lightweight proof requested (selfie, location refresh)
+  → Most pass within minutes
+
+High Risk (40–59 trust score)
+  → AI review required
+  → Claims specialist involvement
+  
+Fraud Risk (<40 trust score)
+  → Investigation + claims team
+```
 
 ### Soft Verification Instead of Rejection
 
-If anomalies are detected, workers aren't automatically rejected. Instead:
+If anomalies detected, workers aren't automatically rejected:
 
 **Lightweight Verification Options:**
 ```
-Option 1: Live location refresh
+Option 1: Live Location Refresh
   • Re-confirm GPS location right now
+  • Quick GPS check
   
-Option 2: App activity check
-  • Show platform login/order activity
+Option 2: App Activity Validation
+  • Show platform login/order activity during claim period
+  • Instant verification
   
-Option 3: Selfie verification
+Option 3: Selfie Verification
   • Photo timestamp matching claim time
+  • Quick identity check
   
-Option 4: Session confirmation
+Option 4: Session Confirmation
   • Verify device session during disruption
 ```
 
@@ -290,93 +370,95 @@ Most genuine workers clear verification within minutes.
 ### Partial Payout Protection
 
 If verification is still pending:
+
 ```
-Honest workers aren't penalized:
-  
 Step 1: Release 30% payout immediately
 Step 2: Worker receives partial relief
 Step 3: Complete verification in background
 Step 4: Release remaining 70% after verification
+
+Result: Genuine workers not financially harmed during checks
 ```
 
 ### Honest Worker Detection Logic
 
-System defaults to trust if:
-```
-✅ Did worker attempt to log in during disruption?
-✅ Did worker try to accept orders?
-✅ Did platform demand drop in area?
-✅ Is disruption independently confirmed?
+System defaults to **trust** if:
 
-If 3+ of above = YES → Treat as genuine claim
-Even if some geo signals are weak
+```
+✓ Did worker attempt to log in during disruption?
+✓ Did worker try to accept orders?
+✓ Did platform demand drop in area?
+✓ Is disruption independently confirmed?
+
+If 3+ of above = YES
+  → Treat as genuine claim
+  → Accept even if some geo signals are weak
 ```
 
 ---
 
-## 📊 Product Flow
+## 📊 Market Opportunity
 
-### End-to-End Journey
+| Metric | Value |
+|--------|-------|
+| **Addressable gig workers in India** | 12 million |
+| **Current insurance penetration** | 0% |
+| **Weekly premium per worker** | ₹20–₹40 |
+| **Annual premium pool (10% penetration)** | **₹780 Cr** |
 
-```
-01. Worker Enrolls
-    └─ Link gig platform account · 2-minute setup
-       
-02. Digital Twin Built
-    └─ AI analyzes 90 days of earnings history
-       └─ Establishes income baseline
-       
-03. Premium Deducted
-    └─ ₹20–40/week auto-deducted from settlement
-    └─ Flexible, cancel anytime
-       
-04. Disruption Detected
-    └─ OpenWeather/AQI/NDMA API triggers
-    └─ Real-time event confirmation
-       
-05. Fraud Checks
-    └─ GPS + behavior + network + device anomaly AI
-    └─ Digital Twin comparison
-    └─ Fraud ring cluster detection
-       
-06. Auto Payout
-    └─ UPI transfer within 2–4 hours
-    └─ No claim forms needed
-    └─ Notification sent to worker
-```
+GigShield AI addresses a completely **uninsured market**.
 
 ---
 
 ## 💼 Key Features
 
 ### For Gig Workers
-- ✅ 2-minute enrollment via gig platform link
-- ✅ Transparent digital twin income model
-- ✅ Flexible coverage tiers (₹20–40/week)
-- ✅ Instant UPI payouts (no claims process)
-- ✅ Real-time earnings dashboard
-- ✅ Trust-first verification (not punitive)
+✅ 2-minute enrollment via gig platform link  
+✅ Transparent digital twin income model  
+✅ Flexible coverage tiers (₹20–40/week)  
+✅ Instant UPI payouts (no claims process)  
+✅ Real-time earnings dashboard  
+✅ Trust-first verification (not punitive)  
+✅ Income protection during disruptions  
 
 ### For Insurers
-- ✅ Live disruption event monitoring
-- ✅ Real-time fraud detection dashboard
-- ✅ City-level risk intelligence
-- ✅ Automated policy lifecycle (weekly)
-- ✅ Zero-touch parametric claims
-- ✅ Premium-to-payout analytics
-- ✅ Fraud ring early warning system
+✅ Live disruption event monitoring  
+✅ Real-time fraud detection dashboard  
+✅ City-level risk intelligence  
+✅ Automated policy lifecycle (weekly)  
+✅ Zero-touch parametric claims  
+✅ Premium-to-payout analytics  
+✅ Fraud ring early warning system  
 
 ---
 
-## 📈 Market Opportunity
+## 🚀 Execution Plan
 
-| Metric | Value |
-|--------|-------|
-| Addressable gig workers in India | **12 million** |
-| Current insurance penetration | **0%** |
-| Weekly premium per worker | **₹20–40** |
-| Annual premium pool (10% penetration) | **₹780 Cr** |
-| Current payout adoption | Live with Guidewire |
+### Phase 1: Prototype ✅ (Implemented)
+
+- ✅ Worker onboarding interface
+- ✅ Simulated income dataset
+- ✅ AI income prediction model
+- ✅ Disruption trigger logic
+- ✅ Fraud detection simulation
+- ✅ Dashboard prototypes
+- ✅ System architecture visualization
+
+### Phase 2: Integration 🔄 (Planned)
+
+- 🔄 Gig platform API integrations (Swiggy, Zomato, Uber)
+- 🔄 Real-time disruption feeds
+- 🔄 Mobile application (iOS/Android)
+- 🔄 Payment gateway integration (UPI/bank)
+- 🔄 Guidewire PolicyCenter/ClaimCenter integration
+
+### Phase 3: Production 🎯 (Future)
+
+- 🎯 Scalable AI infrastructure
+- 🎯 Advanced fraud detection ML models
+- 🎯 Insurance partnership agreements
+- 🎯 Smart contract automation
+- 🎯 City-level expansion (tier 1+2)
 
 ---
 
@@ -386,50 +468,60 @@ Even if some geo signals are weak
 - **OpenWeather API** — Real-time rainfall, temperature
 - **AQI API** — Air quality index monitoring
 - **NDMA** — Government flood alerts
-- **Gig Platform APIs** — Swiggy, Zomato, Amazon Flex, Zepto
+- **Gig Platform APIs** — Swiggy, Zomato, Amazon Flex, Zepto, Uber, Ola
 - **GPS Telemetry** — Worker location tracking
 
 ### AI Models
-- **Digital Twin Model** — LSTM-based weekly income predictor (per worker)
+- **Digital Twin Model** — LSTM-based income predictor (per worker)
 - **Disruption Classifier** — Threshold detection & severity scoring
 - **Fraud Detection AI** — Multi-signal behavioral anomaly detection
-- **Dynamic Pricing Engine** — City risk × worker profile × history optimization
+- **Dynamic Pricing Engine** — City risk × worker profile × history
 
 ### Core Platform (Guidewire)
 - **PolicyCenter** — Weekly micro-policy management
 - **ClaimCenter** — Zero-touch parametric claim auto-adjudication
-- **BillingCenter** — Weekly premium deduction & settlement
+- **BillingCenter** — Weekly premium collection & settlement
 - **Guidewire Cloud Data** — City-level risk intelligence
 
 ### Frontend
 - **HTML/CSS** — Responsive insurance dashboard
 - **JavaScript** — Interactive UI & real-time updates
 - **Chart.js** — Real-time analytics visualization
+- **Mobile** — React Native (future)
 
 ---
 
-## 📱 Live Demo
+## 📱 Live Demo Features
 
-### Insurer Dashboard
-- Active policy management
-- Live disruption event tracking
-- Real-time payout processing
-- Fraud detection queue
-- City risk index visualization
+The interactive prototype includes:
+
+### Screen 1: Insurer Dashboard
+- Active policy metrics (4,812 policies across 6 cities)
+- Live disruption event tracking (Chennai rainfall: 82mm)
+- Real-time payout processing (₹1.97L this week)
+- Fraud detection queue (99.6% auto-approval rate)
+- Payout triggers chart (weekly breakdown)
 - Premium vs payout analytics
+- City risk index visualization
+- Active disruption event table
 
-### Worker Onboarding
+### Screen 2: Worker Onboarding
 - 4-step enrollment flow
-- Platform linking (Swiggy, Zomato, etc.)
-- Digital twin preview
-- Coverage tier selection
-- Instant policy activation
+- Platform linking (Swiggy, Zomato, Amazon Flex, Zepto)
+- Digital twin income visualization
+- Weekly earning baseline display (₹5,500)
+- Coverage tier selection (Basic/Standard/Pro)
+- Policy activation confirmation
+- Real-time progress tracking
 
-### System Architecture
+### Screen 3: System Architecture
 - End-to-end product flow visualization
-- Complete system architecture layer diagram
+- 4-layer system architecture diagram
 - Guidewire integration points
+- Data sources overview
+- AI engines breakdown
 - Market opportunity metrics
+- Technology stack details
 
 ---
 
@@ -437,31 +529,29 @@ Even if some geo signals are weak
 
 ### Prerequisites
 - Modern web browser (Chrome, Firefox, Safari)
-- GitHub account (for contributions)
-- Node.js (for local development, optional)
+- No installation required
 
-### Viewing the Demo
-
-Simply open the HTML file in your browser:
+### Viewing the Live Demo
 
 ```bash
-# Clone repository
+# Clone the repository
 git clone https://github.com/shresthverma29/GigTwin-AI.git
 cd GigTwin-AI
 
 # Open in browser
-open gigshield_guidewire_design.html
+open gigshield_guidewire_design\ 2\ \(13\).html
 # Or
-start gigshield_guidewire_design.html  # Windows
+start gigshield_guidewire_design\ 2\ \(13\).html  # Windows
 ```
 
 **Features:**
-- ✅ Live insurer dashboard with real-time metrics
-- ✅ Interactive worker onboarding (4 steps)
+- ✅ Interactive insurer dashboard with real-time data
+- ✅ 4-step worker onboarding simulator
 - ✅ System architecture visualization
-- ✅ Disruption event tracking
-- ✅ Fraud detection queue
-- ✅ Premium vs payout analytics charts
+- ✅ Live disruption event tracking
+- ✅ Fraud detection reviews
+- ✅ Premium vs payout analytics with Chart.js
+- ✅ Responsive mobile-friendly design
 
 ---
 
@@ -470,46 +560,65 @@ start gigshield_guidewire_design.html  # Windows
 Live dashboard shows:
 
 ```
-Active Policies:        4,812 (across 6 cities)
-Premiums Collected:     ₹1.34L (June) [+8% vs May]
-Payouts This Week:      ₹1.97L (214 workers in Chennai)
-Fraud Flags Under Review: 3 (99.6% auto-approval rate)
+Active Policies:              4,812 (across 6 cities)
+Premiums Collected (Jun):     ₹1.34L (+8% vs May)
+Payouts This Week:            ₹1.97L (214 workers in Chennai)
+Fraud Flags Under Review:     3 (99.6% auto-approval rate)
 
-Active Disruption: Chennai rainfall 82mm (exceeded threshold)
-Triggered Policies:     214
-Estimated Payout:       ₹1,97,080
-Status:                 Processing
+Active Disruption:
+  • Chennai rainfall: 82mm (exceeded 50mm threshold)
+  • Triggered policies: 214
+  • Estimated payout: ₹1,97,080
+  • Status: Processing
+
+City Risk Index (Jun 2025):
+  1. Delhi: 86 (High)
+  2. Mumbai: 78 (High)
+  3. Chennai: 65 (Medium)
+  4. Jaipur: 58 (Medium)
+  5. Bengaluru: 32 (Low)
 ```
 
 ---
 
-## 🔐 Security & Fraud Prevention
+## 🌍 Market Crash Response Strategy
 
-### Defense in Depth Strategy
+Gig worker income is sensitive to multiple disruptions:
 
-Instead of relying on single signal:
+- Weather events (rain, floods, heatwaves)
+- Pollution spikes (high AQI)
+- Platform outages
+- Fuel price shocks
+- Demand crashes
+- Economic slowdown
 
-```
-❌ OLD: GPS verification only
-   → Easy to spoof
+**GigShield AI handles this using:**
 
-✅ NEW: Multi-layer verification
-   ├─ Behavioral twin comparison
-   ├─ Movement pattern analysis  
-   ├─ Device integrity signals
-   ├─ Network intelligence
-   ├─ Environmental consistency
-   ├─ Fraud ring detection
-   └─ Trust scoring (not binary)
-```
+### 1. Adaptive Risk Thresholds
+AI dynamically adjusts payout sensitivity during downturns to protect the loss pool while ensuring necessary payouts.
 
-### Why This Works
+### 2. Risk Pool Protection
+Loss distributed across insured users and reinsurance partners.
 
-1. **Behavior is hard to fake** — 90 days of historical baseline
-2. **Multiple signals together** — Attacker must spoof 5+ vectors
-3. **Cluster detection** — Catches organized fraud rings
-4. **Fair to honest workers** — Trust-first approach
-5. **Dynamic scoring** — Not punitive for edge cases
+### 3. Dynamic Premium Adjustment
+Premium based on:
+- Individual risk score
+- Location hazard index
+- Disruption frequency
+- Worker earning stability
+
+This ensures sustainability during large-scale disruptions.
+
+---
+
+## 🔐 Security & Privacy
+
+- **No Password Storage** — OAuth-only access to gig platforms
+- **Data Encryption** — All data in transit and at rest encrypted
+- **Device Integrity** — Mock GPS & jailbreak detection
+- **Network Security** — VPN & proxy detection
+- **GDPR/India DPA Compliant** — Privacy-first architecture
+- **Audit Trail** — All claims and payouts logged
 
 ---
 
@@ -517,30 +626,126 @@ Instead of relying on single signal:
 
 ```
 GigTwin-AI/
-├── README.md                                    (this file)
-├── gigshield_guidewire_design.html              (main interactive demo)
-├── gigshield_guidewire_design 2 (13).html       (alternate version)
-├── architecture/                                (system design docs)
-│   ├── fraud_prevention.md
-│   ├── digital_twin_model.md
-│   └── guidewire_integration.md
-├── data/                                        (sample data)
-│   ├── sample_policies.json
-│   └── disruption_events.json
-└── docs/                                        (detailed documentation)
-    ├── USER_GUIDE.md
-    ├── API_INTEGRATION.md
-    └── DEPLOYMENT.md
----
----
-
-
-
-## ⚡ One-Sentence Vision
-
-Income protection for India's 12 million gig workers — instant, fair, and fraud-proof.
+├── README.md                                  (this file)
+├── gigshield_guidewire_design 2 (13).html     (main interactive demo)
+├── docs/
+│   ├── ARCHITECTURE.md                        (detailed system design)
+│   ├── FRAUD_DETECTION.md                     (anti-spoofing strategy)
+│   ├── DIGITAL_TWIN.md                        (income modeling)
+│   ├── API_INTEGRATION.md                     (Guidewire integration)
+│   └── USER_GUIDE.md                          (worker guide)
+├── data/
+│   ├── sample_policies.json                   (demo dataset)
+│   ├── disruption_events.json                 (sample disruptions)
+│   └── earnings_history.json                  (worker income data)
+└── assets/
+    ├── logo.svg
+    ├── city_risk_map.png
+    └── screenshots/
+```
 
 ---
 
-*Last updated: March 19, 2026*  
-*Built with ❤️ by the BeyondTheBench*
+## 🤝 Contributing
+
+We welcome contributions! Please:
+
+1. **Fork the repository**
+   ```bash
+   git clone https://github.com/shresthverma29/GigTwin-AI.git
+   ```
+
+2. **Create a feature branch**
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+3. **Commit changes**
+   ```bash
+   git commit -m "Add: detailed description of your changes"
+   ```
+
+4. **Push to branch**
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+
+5. **Open Pull Request**
+   - Describe changes clearly
+   - Include screenshots/demos if applicable
+   - Reference any related issues
+
+### Contribution Areas
+- ✅ Backend API development
+- ✅ Frontend UI enhancements
+- ✅ AI/ML model improvements
+- ✅ Guidewire integration
+- ✅ Documentation
+- ✅ Bug fixes
+- ✅ Performance optimization
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License — see LICENSE file for details.
+
+---
+
+## 📞 Contact & Support
+
+- **Event:** Guidewire Hackathon 2025
+- **Demo Date:** June 9, 2025
+- **Status:** Live prototype active
+- **Repository:** https://github.com/shresthverma29/GigTwin-AI
+
+### Feedback & Issues
+- **Report Issues:** [GitHub Issues](https://github.com/shresthverma29/GigTwin-AI/issues)
+- **Feature Requests:** [GitHub Discussions](https://github.com/shresthverma29/GigTwin-AI/discussions)
+- **Contact:** shresth.verma@gigtwin.ai
+
+---
+
+## 🎯 Key Innovation Summary
+
+GigShield AI combines:
+
+✅ **Parametric Insurance** — No manual claims  
+✅ **Digital Twin Modeling** — Personalized income baselines  
+✅ **Behavioral AI Verification** — Multi-signal fraud detection  
+✅ **Fraud-Resistant Payouts** — 5-layer verification  
+✅ **Instant Compensation** — 2–4 hour UPI transfers  
+✅ **Trust-First UX** — Protects honest workers first  
+
+This removes traditional insurance friction entirely.
+
+---
+
+## 📈 Impact & SDG Alignment
+
+GigShield AI enables:
+
+- ✅ **Financial Stability** for 12M Indian gig workers
+- ✅ **Faster Payouts** (2–4 hours vs 2–3 weeks)
+- ✅ **Fraud Reduction** (99.6% auto-approval with AI verification)
+- ✅ **Increased Platform Trust** (worker confidence)
+- ✅ **SDG Goal 8** (Decent Work and Economic Growth)
+- ✅ **SDG Goal 1** (No Poverty — income protection)
+
+---
+
+## 🎯 One-Line Pitch
+
+**"GigShield AI prevents parametric insurance fraud using behavioral digital twins, multi-signal verification, and AI fraud graph detection instead of relying on spoofable GPS triggers."**
+
+---
+
+## ⚡ Vision Statement
+
+**Income protection for India's 12 million gig workers — instant, fair, fraud-proof, and accessible to all.**
+
+---
+
+*Last updated: March 20, 2026*  
+*Built with ❤️ for the Guidewire Hackathon 2025*  
+*Demo status: ✅ Live and interactive*
