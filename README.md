@@ -531,63 +531,10 @@ GigTwin-AI/
     ├── USER_GUIDE.md
     ├── API_INTEGRATION.md
     └── DEPLOYMENT.md
-```
-
+---
 ---
 
-## 🤝 Contributing
 
-We welcome contributions! Please:
-
-1. **Fork the repository**
-   ```bash
-   git clone https://github.com/shresthverma29/GigTwin-AI.git
-   ```
-
-2. **Create a feature branch**
-   ```bash
-   git checkout -b feature/your-amazing-feature
-   ```
-
-3. **Commit your changes**
-   ```bash
-   git commit -m "Add: your amazing feature description"
-   ```
-
-4. **Push to branch**
-   ```bash
-   git push origin feature/your-amazing-feature
-   ```
-
-5. **Open a Pull Request**
-   - Describe changes clearly
-   - Link any related issues
-   - Include test results/screenshots
-
-### Contribution Areas
-
-- ✅ Frontend UI enhancements
-- ✅ New AI/ML models
-- ✅ Guidewire integration improvements
-- ✅ Documentation
-- ✅ Bug fixes
-- ✅ Performance optimization
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License — see LICENSE file for details.
-
----ew
-
-### Feedback & Issues
-
-Found a bug or have a feature request?
-
-- **Report Issue:** [GitHub Issues](https://github.com/shresthverma29/GigTwin-AI/issues)
-- **Discuss Ideas:** [GitHub Discussions](https://github.com/shresthverma29/GigTwin-AI/discussions)
----
 
 ## ⚡ One-Sentence Vision
 
